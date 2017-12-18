@@ -22,6 +22,12 @@
 		AA85D2841FE79FE7001C12A6 /* MainPresentor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA85D2831FE79FE7001C12A6 /* MainPresentor.swift */; };
 		AA85D2861FE7A019001C12A6 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA85D2851FE7A019001C12A6 /* MainRouter.swift */; };
 		AA85D2891FE7AA09001C12A6 /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA85D2881FE7AA09001C12A6 /* NoteTableViewCell.swift */; };
+		AA85D29B1FE7B1D2001C12A6 /* MPInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA85D2991FE7B1D2001C12A6 /* MPInputField.swift */; };
+		AA85D29C1FE7B1D2001C12A6 /* MPInputFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA85D29A1FE7B1D2001C12A6 /* MPInputFieldView.xib */; };
+		AA85D29F1FE7B215001C12A6 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA85D29E1FE7B215001C12A6 /* Utility.swift */; };
+		AACECE781FE7C07F00A9968A /* NewNoteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACECE771FE7C07F00A9968A /* NewNoteTableViewController.swift */; };
+		AACECE891FE7C73600A9968A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACECE881FE7C73600A9968A /* Constants.swift */; };
+		AACECE8B1FE7C90E00A9968A /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACECE8A1FE7C90E00A9968A /* ViewExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +49,12 @@
 		AA85D2831FE79FE7001C12A6 /* MainPresentor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresentor.swift; sourceTree = "<group>"; };
 		AA85D2851FE7A019001C12A6 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		AA85D2881FE7AA09001C12A6 /* NoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
+		AA85D2991FE7B1D2001C12A6 /* MPInputField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPInputField.swift; sourceTree = "<group>"; };
+		AA85D29A1FE7B1D2001C12A6 /* MPInputFieldView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MPInputFieldView.xib; sourceTree = "<group>"; };
+		AA85D29E1FE7B215001C12A6 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		AACECE771FE7C07F00A9968A /* NewNoteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteTableViewController.swift; sourceTree = "<group>"; };
+		AACECE881FE7C73600A9968A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		AACECE8A1FE7C90E00A9968A /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +87,7 @@
 		AA85D2411FE75D2C001C12A6 /* BlockNote */ = {
 			isa = PBXGroup;
 			children = (
+				AACECE871FE7C72800A9968A /* Constant */,
 				AA85D2641FE764A9001C12A6 /* Utility */,
 				AA85D2541FE75DBF001C12A6 /* DataStore */,
 				AA85D2561FE75DDF001C12A6 /* Entity */,
@@ -117,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				AA85D2651FE764DC001C12A6 /* StringExtension.swift */,
+				AA85D29E1FE7B215001C12A6 /* Utility.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -150,8 +164,10 @@
 		AA85D26C1FE76A2C001C12A6 /* VPR */ = {
 			isa = PBXGroup;
 			children = (
+				AA85D2981FE7B1BD001C12A6 /* Custom Views */,
 				AA85D26D1FE770D1001C12A6 /* Base */,
 				AA85D2821FE79D52001C12A6 /* Main */,
+				AACECE761FE7BFDD00A9968A /* New Note */,
 			);
 			path = VPR;
 			sourceTree = "<group>";
@@ -182,6 +198,40 @@
 				AA85D2881FE7AA09001C12A6 /* NoteTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		AA85D2981FE7B1BD001C12A6 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				AA85D29D1FE7B1DA001C12A6 /* Input Field */,
+				AACECE8A1FE7C90E00A9968A /* ViewExtensions.swift */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		AA85D29D1FE7B1DA001C12A6 /* Input Field */ = {
+			isa = PBXGroup;
+			children = (
+				AA85D2991FE7B1D2001C12A6 /* MPInputField.swift */,
+				AA85D29A1FE7B1D2001C12A6 /* MPInputFieldView.xib */,
+			);
+			path = "Input Field";
+			sourceTree = "<group>";
+		};
+		AACECE761FE7BFDD00A9968A /* New Note */ = {
+			isa = PBXGroup;
+			children = (
+				AACECE771FE7C07F00A9968A /* NewNoteTableViewController.swift */,
+			);
+			path = "New Note";
+			sourceTree = "<group>";
+		};
+		AACECE871FE7C72800A9968A /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				AACECE881FE7C73600A9968A /* Constants.swift */,
+			);
+			path = Constant;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA85D24D1FE75D2D001C12A6 /* LaunchScreen.storyboard in Resources */,
+				AA85D29C1FE7B1D2001C12A6 /* MPInputFieldView.xib in Resources */,
 				AA85D24A1FE75D2D001C12A6 /* Assets.xcassets in Resources */,
 				AA85D2481FE75D2D001C12A6 /* Main.storyboard in Resources */,
 			);
@@ -257,14 +308,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA85D29F1FE7B215001C12A6 /* Utility.swift in Sources */,
 				AA85D2631FE763C4001C12A6 /* Chain.swift in Sources */,
 				AA85D2451FE75D2C001C12A6 /* MainViewController.swift in Sources */,
 				AA85D2661FE764DC001C12A6 /* StringExtension.swift in Sources */,
 				AA85D2691FE76A09001C12A6 /* NoteInteractor.swift in Sources */,
 				AA85D2811FE78170001C12A6 /* ViewControllerLogic.swift in Sources */,
+				AA85D29B1FE7B1D2001C12A6 /* MPInputField.swift in Sources */,
+				AACECE891FE7C73600A9968A /* Constants.swift in Sources */,
 				AA85D26F1FE7715A001C12A6 /* ViewControllerExtension.swift in Sources */,
+				AACECE781FE7C07F00A9968A /* NewNoteTableViewController.swift in Sources */,
 				AA85D25A1FE75E78001C12A6 /* Block.swift in Sources */,
 				AA85D2431FE75D2C001C12A6 /* AppDelegate.swift in Sources */,
+				AACECE8B1FE7C90E00A9968A /* ViewExtensions.swift in Sources */,
 				AA85D2581FE75E1A001C12A6 /* Note.swift in Sources */,
 				AA85D2861FE7A019001C12A6 /* MainRouter.swift in Sources */,
 				AA85D2841FE79FE7001C12A6 /* MainPresentor.swift in Sources */,

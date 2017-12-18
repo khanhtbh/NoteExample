@@ -9,7 +9,9 @@
 import UIKit
 
 class MainViewController: UITableViewController {
-    
+
+    let bottomMenuHeight: CGFloat = 100
+
     var notes: Array<Note> = []
     
     var presentor: MainPresentor? {
@@ -20,6 +22,33 @@ class MainViewController: UITableViewController {
     var router: MainRouter? {
         didSet {
             router?.viewController = self
+        }
+    }
+    
+    override var canBecomeFirstResponder: Bool {
+        return true
+    }
+    
+    private var _inputAccessoryView: UIView!
+    
+    override var inputAccessoryView: UIView? {
+        get {
+            if let _ = _inputAccessoryView {
+                return _inputAccessoryView
+            }
+            
+            _inputAccessoryView = UIView()
+            _inputAccessoryView.frame = CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: bottomMenuHeight)
+            let newNoteBtn = UIButton()
+            newNoteBtn.backgroundColor = UIColor.orange
+            newNoteBtn.frame = CGRect(x: 0, y: 0, width: GUISize.bottomScreenButtonWidth, height: GUISize.bottomScreenButtonHeight)
+            newNoteBtn.center = CGPoint(x: SCREEN_WIDTH/2, y: bottomMenuHeight/2)
+            newNoteBtn.cornerRadius(GUISize.bottomScreenCornerRadiusRatio, withShadowEnabled: true)
+            newNoteBtn.setTitle("New Note", for: .normal)
+            newNoteBtn.titleLabel?.textColor = .white
+            newNoteBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+            _inputAccessoryView.addSubview(newNoteBtn)
+            return _inputAccessoryView
         }
     }
 

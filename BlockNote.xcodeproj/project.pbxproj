@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA740DA21FE8FB46006674A6 /* NewNoteRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA740DA11FE8FB46006674A6 /* NewNoteRouter.swift */; };
+		AA7D984F1FE813BB0097A7CB /* NewNotePresentor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7D984E1FE813BB0097A7CB /* NewNotePresentor.swift */; };
 		AA85D2431FE75D2C001C12A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA85D2421FE75D2C001C12A6 /* AppDelegate.swift */; };
 		AA85D2451FE75D2C001C12A6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA85D2441FE75D2C001C12A6 /* MainViewController.swift */; };
 		AA85D2481FE75D2D001C12A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA85D2461FE75D2C001C12A6 /* Main.storyboard */; };
@@ -31,6 +33,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA740DA11FE8FB46006674A6 /* NewNoteRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteRouter.swift; sourceTree = "<group>"; };
+		AA7D984E1FE813BB0097A7CB /* NewNotePresentor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNotePresentor.swift; sourceTree = "<group>"; };
 		AA85D23F1FE75D2C001C12A6 /* BlockNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlockNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA85D2421FE75D2C001C12A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA85D2441FE75D2C001C12A6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -222,6 +226,8 @@
 			isa = PBXGroup;
 			children = (
 				AACECE771FE7C07F00A9968A /* NewNoteTableViewController.swift */,
+				AA7D984E1FE813BB0097A7CB /* NewNotePresentor.swift */,
+				AA740DA11FE8FB46006674A6 /* NewNoteRouter.swift */,
 			);
 			path = "New Note";
 			sourceTree = "<group>";
@@ -319,8 +325,10 @@
 				AA85D26F1FE7715A001C12A6 /* ViewControllerExtension.swift in Sources */,
 				AACECE781FE7C07F00A9968A /* NewNoteTableViewController.swift in Sources */,
 				AA85D25A1FE75E78001C12A6 /* Block.swift in Sources */,
+				AA7D984F1FE813BB0097A7CB /* NewNotePresentor.swift in Sources */,
 				AA85D2431FE75D2C001C12A6 /* AppDelegate.swift in Sources */,
 				AACECE8B1FE7C90E00A9968A /* ViewExtensions.swift in Sources */,
+				AA740DA21FE8FB46006674A6 /* NewNoteRouter.swift in Sources */,
 				AA85D2581FE75E1A001C12A6 /* Note.swift in Sources */,
 				AA85D2861FE7A019001C12A6 /* MainRouter.swift in Sources */,
 				AA85D2841FE79FE7001C12A6 /* MainPresentor.swift in Sources */,

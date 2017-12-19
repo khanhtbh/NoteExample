@@ -8,6 +8,10 @@
 
 import UIKit
 
+@objc protocol NewNoteDelegate {
+    @objc func newNoteViewController(_ newNoteViewController: NewNoteTableViewController, note: Note)
+}
+
 class NewNoteTableViewController: UITableViewController {
 
     @IBOutlet weak var noteTitleInputField: MPInputField!
@@ -19,8 +23,55 @@ class NewNoteTableViewController: UITableViewController {
         }
     }
     
+    var presentor: NewNotePresentor? {
+        didSet {
+            presentor?.viewController = self
+        }
+    }
+    
+    var router: NewNoteRouter? {
+        didSet {
+            router?.viewController = self
+        }
+    }
+    
+    weak var delegate: NewNoteDelegate?
+    
+    let bottomMenuHeight: CGFloat = 100
+    
+    override var canBecomeFirstResponder: Bool {
+        return true
+    }
+    
+    private var _inputAccessoryView: UIView!
+    
+    override var inputAccessoryView: UIView? {
+        get {
+            if let _ = _inputAccessoryView {
+                return _inputAccessoryView
+            }
+            
+            _inputAccessoryView = UIView()
+            _inputAccessoryView.frame = CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: bottomMenuHeight)
+            let newNoteBtn = UIButton()
+            newNoteBtn.backgroundColor = UIColor.orange
+            newNoteBtn.frame = CGRect(x: 0, y: 0, width: GUISize.bottomScreenButtonWidth, height: GUISize.bottomScreenButtonHeight)
+            newNoteBtn.center = CGPoint(x: SCREEN_WIDTH/2, y: bottomMenuHeight/2)
+            newNoteBtn.cornerRadius(GUISize.bottomScreenCornerRadiusRatio, withShadowEnabled: true)
+            newNoteBtn.setTitle("Add Note", for: .normal)
+            newNoteBtn.titleLabel?.textColor = .white
+            newNoteBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
+            newNoteBtn.addTarget(self, action: #selector(addNewNoteBtnAction(_:)), for: .touchUpInside)
+            _inputAccessoryView.addSubview(newNoteBtn)
+            return _inputAccessoryView
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        router = NewNoteRouter()
+        presentor = NewNotePresentor()
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,6 +80,13 @@ class NewNoteTableViewController: UITableViewController {
     }
     
     
+    @IBAction func cancelBtnAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func addNewNoteBtnAction(_ sender: Any) {
+        presentor?.createNewNote()
+    }
 
     /*
     // MARK: - Navigation

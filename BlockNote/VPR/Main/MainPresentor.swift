@@ -17,4 +17,9 @@ class MainPresentor: Presentor<MainViewController> {
         viewController.notes = NoteInteractor.shared.notes
         viewController.tableView.reloadData()
     }
+    
+    func addNewNote(_ note: Note) {
+        NoteInteractor.shared.addNewNote(title: note.title, content: note.content)
+        self.loadNotes()
+    }
 }

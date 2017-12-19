@@ -46,7 +46,8 @@ class MainViewController: UITableViewController {
             newNoteBtn.cornerRadius(GUISize.bottomScreenCornerRadiusRatio, withShadowEnabled: true)
             newNoteBtn.setTitle("New Note", for: .normal)
             newNoteBtn.titleLabel?.textColor = .white
-            newNoteBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+            newNoteBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
+            newNoteBtn.addTarget(self, action: #selector(newNoteBtnAction(_:)), for: .touchUpInside)
             _inputAccessoryView.addSubview(newNoteBtn)
             return _inputAccessoryView
         }
@@ -83,6 +84,20 @@ class MainViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: NoteTableViewCell.cellId, for: indexPath) as! NoteTableViewCell
         cell.note = notes[indexPath.row]
         return cell
+    }
+    
+    @objc func newNoteBtnAction(_ sender: Any) {
+        router?.openNewNoteViewController()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        router?.prepareForSegue(segue)
+    }
+}
+
+extension MainViewController: NewNoteDelegate {
+    func newNoteViewController(_ newNoteViewController: NewNoteTableViewController, note: Note) {
+        presentor?.addNewNote(note)
     }
 }
 

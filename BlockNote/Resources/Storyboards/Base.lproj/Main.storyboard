@@ -104,7 +104,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="34"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cEf-a9-lKr">
+                                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cEf-a9-lKr">
                                                     <rect key="frame" x="309" y="2" width="50" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                     <state key="normal" title="Cancel">
@@ -115,7 +115,7 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEW NOTE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YIb-WY-VUv">
-                                                    <rect key="frame" x="14" y="7" width="90" height="21"/>
+                                                    <rect key="frame" x="14" y="7" width="290" height="21"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -126,6 +126,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="cEf-a9-lKr" secondAttribute="trailing" constant="16" id="3YJ-66-Pg5"/>
                                                 <constraint firstItem="cEf-a9-lKr" firstAttribute="centerY" secondItem="Tea-VY-FwY" secondAttribute="centerY" id="GB5-B9-02C"/>
                                                 <constraint firstItem="YIb-WY-VUv" firstAttribute="leading" secondItem="Tea-VY-FwY" secondAttribute="leading" constant="14" id="Kel-i3-Ux8"/>
+                                                <constraint firstItem="cEf-a9-lKr" firstAttribute="leading" secondItem="YIb-WY-VUv" secondAttribute="trailing" constant="5" id="LkO-6b-9VE"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
